@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Climbing Training</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --bg-color: #0a0b1e;
+                --card-bg: rgba(16, 18, 45, 0.7);
+                --primary-accent: #ffcc00; /* Gold */
+                --secondary-accent: #ff8800; /* Orange */
+                --text-main: #e0e0ff;
+                --text-dim: #a0a0c0;
+                --glow: 0 0 15px rgba(255, 204, 0, 0.3);
+            }
+
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                background-color: var(--bg-color);
+                background-image:
+                    radial-gradient(
+                        circle at 20% 30%,
+                        rgba(255, 136, 0, 0.05) 0%,
+                        transparent 40%
+                    ),
+                    radial-gradient(
+                        circle at 80% 70%,
+                        rgba(255, 204, 0, 0.05) 0%,
+                        transparent 40%
+                    );
+                color: var(--text-main);
+                font-family: "Rajdhani", sans-serif;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem;
+            }
+
+            header {
+                margin-bottom: 3rem;
+                text-align: center;
+            }
+
+            h1 {
+                font-family: "Orbitron", sans-serif;
+                font-size: 2.5rem;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+                color: var(--primary-accent);
+                text-shadow: var(--glow);
+                margin-bottom: 0.5rem;
+            }
+
+            .subtitle {
+                color: var(--text-dim);
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                font-size: 0.9rem;
+            }
+
+            main {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 2.5rem;
+                width: 100%;
+                max-width: 1200px;
+            }
+
+            .workout-card {
+                background: var(--card-bg);
+                border: 2px solid var(--primary-accent);
+                border-radius: 40px;
+                padding: 2rem;
+                backdrop-filter: blur(12px);
+                box-shadow: var(--glow);
+                transition:
+                    transform 0.3s ease,
+                    box-shadow 0.3s ease;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .workout-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 0 25px rgba(255, 204, 0, 0.5);
+                border-color: var(--secondary-accent);
+            }
+
+            h2 {
+                font-family: "Orbitron", sans-serif;
+                font-size: 1.8rem;
+                color: var(--secondary-accent);
+                margin-bottom: 1.5rem;
+                border-bottom: 1px solid rgba(255, 136, 0, 0.3);
+                padding-bottom: 0.5rem;
+                text-transform: uppercase;
+            }
+
+            .section-label {
+                font-weight: 700;
+                text-transform: uppercase;
+                font-size: 0.8rem;
+                color: var(--primary-accent);
+                margin-bottom: 0.5rem;
+                letter-spacing: 1px;
+            }
+
+            .protocol,
+            .test {
+                margin-bottom: 1.5rem;
+            }
+
+            .protocol ul {
+                list-style: none;
+            }
+
+            .protocol li {
+                margin-bottom: 0.5rem;
+                display: flex;
+                justify-content: space-between;
+                padding: 0.5rem;
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 8px;
+            }
+
+            .protocol li span:first-child {
+                color: var(--text-dim);
+            }
+
+            .protocol li span:last-child {
+                font-weight: 700;
+                color: var(--text-main);
+            }
+
+            .test-content {
+                background: rgba(255, 136, 0, 0.1);
+                border-left: 3px solid var(--secondary-accent);
+                padding: 1rem;
+                border-radius: 0 15px 15px 0;
+                font-style: italic;
+                line-height: 1.4;
+            }
+
+            @media (max-width: 768px) {
+                h1 {
+                    font-size: 1.8rem;
+                }
+                main {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Climbing Training</h1>
+            <p class="subtitle">System Status: Optimal | Ready to Initialize</p>
+        </header>
+
+        <main>
+            <!-- Fingers -->
+            <article class="workout-card">
+                <h2>Fingers</h2>
+                <div class="protocol">
+                    <p class="section-label">Protocol</p>
+                    <ul>
+                        <li>
+                            <span>Sets</span> <span>6 Sets Per Grip Type</span>
+                        </li>
+                        <li>
+                            <span>Reps</span>
+                            <span>1 x 10s Hang (at 80% Max)</span>
+                        </li>
+                        <li><span>Rest</span> <span>1m Between Sets</span></li>
+                    </ul>
+                </div>
+                <div class="test">
+                    <p class="section-label">Assessment</p>
+                    <div class="test-content">
+                        <p>
+                            7 seconds on a 20mm edge adding weight until failure
+                            with 3-5m rests in between.
+                        </p>
+                        <p>
+                            Max Hang = ((Bodyweight + Added Weight) /
+                            Bodyweight) * 100.
+                        </p>
+                        <p>Reassess every 6 weeks.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Pull Ups -->
+            <article class="workout-card">
+                <h2>Pull Ups</h2>
+                <div class="protocol">
+                    <p class="section-label">Protocol</p>
+                    <ul>
+                        <li><span>Sets</span> <span>6 Sets</span></li>
+                        <li>
+                            <span>Reps</span> <span>4 Reps (Weighted)</span>
+                        </li>
+                        <li><span>Rest</span> <span>2m Between Sets</span></li>
+                    </ul>
+                </div>
+                <div class="test">
+                    <p class="section-label">Assessment</p>
+                    <div class="test-content">
+                        <p>
+                            2 Reps weighted pull-up adding weight until failure.
+                        </p>
+                        <p>
+                            Max Pull = ((Bodyweight + Added Weight) /
+                            Bodyweight) * 100.
+                        </p>
+                        <p>Reassess every 6 weeks.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Core -->
+            <article class="workout-card">
+                <h2>Core</h2>
+                <div class="protocol">
+                    <p class="section-label">Protocol</p>
+                    <ul>
+                        <li><span>Sets</span> <span>6 Sets</span></li>
+                        <li><span>Reps</span> <span>20s hold</span></li>
+                        <li><span>Rest</span> <span>1m Between Sets</span></li>
+                    </ul>
+                </div>
+                <div class="test">
+                    <p class="section-label">Assessment</p>
+                    <div class="test-content">
+                        <p>1 x 20s hold.</p>
+                        <p>
+                            Max Core = Progress through front lever hold
+                            starting with full crunched, extending gradually to
+                            a one legged front lever and eventually a full front
+                            lever.
+                        </p>
+                        <p>Reassess every 6 weeks.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Endurance -->
+            <article class="workout-card">
+                <h2>Endurance</h2>
+                <div class="protocol">
+                    <p class="section-label">Protocol</p>
+                    <ul>
+                        <li><span>Sets</span> <span>1 Set</span></li>
+                        <li>
+                            <span>Reps</span>
+                            <span> 30m Hang With Feet Planted</span>
+                        </li>
+                        <li><span>Rest</span> <span>None</span></li>
+                    </ul>
+                </div>
+                <div class="test">
+                    <p class="section-label">Assessment</p>
+                    <div class="test-content">
+                        <p>
+                            7s hangs with 3s rest on a 20mm edge at 50% max
+                            finger strength. Repeat until failure.
+                        </p>
+                        <p>Endurance = time until failure.</p>
+                        <p>Reassess every 6 weeks.</p>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </body>
+</html>
