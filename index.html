@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Climbing Training</title>
+        <title>Training Dashboard | Climbing Training</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -152,6 +152,29 @@
                 border-radius: 0 15px 15px 0;
                 font-style: italic;
                 line-height: 1.4;
+                margin-bottom: 1.5rem;
+            }
+
+            .start-session-btn {
+                margin-top: auto;
+                background: transparent;
+                border: 2px solid var(--primary-accent);
+                color: var(--primary-accent);
+                padding: 0.8rem;
+                border-radius: 12px;
+                font-family: "Orbitron", sans-serif;
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                text-align: center;
+                text-decoration: none;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .start-session-btn:hover {
+                background: var(--primary-accent);
+                color: var(--bg-color);
+                box-shadow: 0 0 15px var(--primary-accent);
             }
 
             @media (max-width: 768px) {
@@ -168,6 +191,10 @@
         <header>
             <h1>Climbing Training</h1>
             <p class="subtitle">System Status: Optimal | Ready to Initialize</p>
+            <nav style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center;">
+                <a href="calculator.html" style="color: var(--primary-accent); text-decoration: none; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; border: 1px solid var(--primary-accent); padding: 0.5rem 1rem; border-radius: 20px; transition: all 0.3s ease;">Calculator</a>
+                <a href="workout.html" style="color: var(--secondary-accent); text-decoration: none; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; border: 1px solid var(--secondary-accent); padding: 0.5rem 1rem; border-radius: 20px; transition: all 0.3s ease;">Start Workout</a>
+            </nav>
         </header>
 
         <main>
@@ -201,6 +228,7 @@
                         <p>Reassess every 6 weeks.</p>
                     </div>
                 </div>
+                <a href="workout.html?name=Fingers&sets=6&work=10&rest=60" class="start-session-btn">Start Session</a>
             </article>
 
             <!-- Pull Ups -->
@@ -229,6 +257,7 @@
                         <p>Reassess every 6 weeks.</p>
                     </div>
                 </div>
+                <a href="workout.html?name=Pull+Ups&sets=6&work=15&rest=120" class="start-session-btn">Start Session</a>
             </article>
 
             <!-- Core -->
@@ -255,6 +284,7 @@
                         <p>Reassess every 6 weeks.</p>
                     </div>
                 </div>
+                <a href="workout.html?name=Core&sets=6&work=20&rest=60" class="start-session-btn">Start Session</a>
             </article>
 
             <!-- Endurance -->
@@ -282,6 +312,7 @@
                         <p>Reassess every 6 weeks.</p>
                     </div>
                 </div>
+                <a href="workout.html?name=Endurance&sets=1&work=1800&rest=0" class="start-session-btn">Start Session</a>
             </article>
         </main>
     </body>

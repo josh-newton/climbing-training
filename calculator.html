@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Max Strength Calculator | Climbing Training</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --bg-color: #0a0b1e;
+                --card-bg: rgba(16, 18, 45, 0.7);
+                --primary-accent: #ffcc00; /* Gold */
+                --secondary-accent: #ff8800; /* Orange */
+                --text-main: #e0e0ff;
+                --text-dim: #a0a0c0;
+                --glow: 0 0 15px rgba(255, 204, 0, 0.3);
+            }
+
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                background-color: var(--bg-color);
+                background-image:
+                    radial-gradient(
+                        circle at 20% 30%,
+                        rgba(255, 136, 0, 0.05) 0%,
+                        transparent 40%
+                    ),
+                    radial-gradient(
+                        circle at 80% 70%,
+                        rgba(255, 204, 0, 0.05) 0%,
+                        transparent 40%
+                    );
+                color: var(--text-main);
+                font-family: "Rajdhani", sans-serif;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem;
+            }
+
+            header {
+                margin-bottom: 3rem;
+                text-align: center;
+            }
+
+            h1 {
+                font-family: "Orbitron", sans-serif;
+                font-size: 2.5rem;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+                color: var(--primary-accent);
+                text-shadow: var(--glow);
+                margin-bottom: 0.5rem;
+            }
+
+            .subtitle {
+                color: var(--text-dim);
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                font-size: 0.9rem;
+            }
+
+            main {
+                width: 100%;
+                max-width: 600px;
+            }
+
+            .calculator-card {
+                background: var(--card-bg);
+                border: 2px solid var(--primary-accent);
+                border-radius: 40px;
+                padding: 3rem;
+                backdrop-filter: blur(12px);
+                box-shadow: var(--glow);
+                display: flex;
+                flex-direction: column;
+            }
+
+            h2 {
+                font-family: "Orbitron", sans-serif;
+                font-size: 1.8rem;
+                color: var(--secondary-accent);
+                margin-bottom: 2rem;
+                border-bottom: 1px solid rgba(255, 136, 0, 0.3);
+                padding-bottom: 0.5rem;
+                text-transform: uppercase;
+                text-align: center;
+            }
+
+            .input-group {
+                margin-bottom: 2rem;
+            }
+
+            label {
+                display: block;
+                font-weight: 700;
+                text-transform: uppercase;
+                font-size: 0.9rem;
+                color: var(--primary-accent);
+                margin-bottom: 0.8rem;
+                letter-spacing: 1px;
+            }
+
+            input {
+                width: 100%;
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 204, 0, 0.3);
+                border-radius: 12px;
+                padding: 1rem;
+                color: var(--text-main);
+                font-family: "Rajdhani", sans-serif;
+                font-size: 1.2rem;
+                outline: none;
+                transition: border-color 0.3s ease;
+            }
+
+            input:focus {
+                border-color: var(--primary-accent);
+                box-shadow: 0 0 10px rgba(255, 204, 0, 0.2);
+            }
+
+            .result-container {
+                margin-top: 1rem;
+                background: rgba(255, 136, 0, 0.1);
+                border-left: 3px solid var(--secondary-accent);
+                padding: 2rem;
+                border-radius: 0 20px 20px 0;
+                text-align: center;
+            }
+
+            .result-label {
+                font-weight: 700;
+                text-transform: uppercase;
+                font-size: 1rem;
+                color: var(--secondary-accent);
+                margin-bottom: 0.5rem;
+            }
+
+            .result-value {
+                font-family: "Orbitron", sans-serif;
+                font-size: 3rem;
+                color: var(--text-main);
+                text-shadow: var(--glow);
+            }
+
+            .unit {
+                font-size: 1.2rem;
+                color: var(--text-dim);
+                margin-left: 0.5rem;
+            }
+
+            .nav-link {
+                margin-top: 2rem;
+                color: var(--text-dim);
+                text-decoration: none;
+                text-transform: uppercase;
+                font-size: 0.8rem;
+                letter-spacing: 1px;
+                transition: color 0.3s ease;
+            }
+
+            .nav-link:hover {
+                color: var(--primary-accent);
+            }
+
+            @media (max-width: 768px) {
+                h1 {
+                    font-size: 1.8rem;
+                }
+                .calculator-card {
+                    padding: 2rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Max Strength</h1>
+            <p class="subtitle">Calculation Module Loaded</p>
+        </header>
+
+        <main>
+            <article class="calculator-card">
+                <h2>Calculator</h2>
+                
+                <div class="input-group">
+                    <label for="bodyweight">Bodyweight (kg)</label>
+                    <input type="number" id="bodyweight" placeholder="e.g. 75" step="0.1">
+                </div>
+
+                <div class="input-group">
+                    <label for="added-weight">Added Weight (kg)</label>
+                    <input type="number" id="added-weight" placeholder="e.g. 20" step="0.1">
+                </div>
+
+                <div class="result-container">
+                    <p class="result-label">Max Strength</p>
+                    <div class="result-value" id="result">--</div>
+                    <span class="unit">% Bodyweight</span>
+                </div>
+
+                <a href="index.html" class="nav-link">← Return to Training Dashboard</a>
+            </article>
+        </main>
+
+        <script>
+            const bodyweightInput = document.getElementById('bodyweight');
+            const addedWeightInput = document.getElementById('added-weight');
+            const resultDisplay = document.getElementById('result');
+
+            function calculateMaxStrength() {
+                const bw = parseFloat(bodyweightInput.value);
+                const aw = parseFloat(addedWeightInput.value);
+
+                if (!isNaN(bw) && !isNaN(aw) && bw > 0) {
+                    const maxStrength = ((bw + aw) / bw) * 100;
+                    resultDisplay.textContent = maxStrength.toFixed(1);
+                } else if (!isNaN(bw) && bw > 0 && addedWeightInput.value === '') {
+                    // Assume 0 added weight if empty but BW is present
+                    const maxStrength = (bw / bw) * 100;
+                    resultDisplay.textContent = maxStrength.toFixed(1);
+                } else {
+                    resultDisplay.textContent = '--';
+                }
+            }
+
+            bodyweightInput.addEventListener('input', calculateMaxStrength);
+            addedWeightInput.addEventListener('input', calculateMaxStrength);
+        </script>
+    </body>
+</html>
